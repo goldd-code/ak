@@ -140,7 +140,7 @@ export default function HomePage({ isDarkMode, toggleDarkMode }: HomePageProps) 
             setShowSortMenu(false);
           }}
         >
-          <Filter size={16} fill="currentColor" />
+          <Filter size={14} />
           Filter
           {showFilterMenu && (
             <div className="dropdown-menu">
@@ -170,7 +170,7 @@ export default function HomePage({ isDarkMode, toggleDarkMode }: HomePageProps) 
             setShowFilterMenu(false);
           }}
         >
-          <ArrowUpDown size={16} fill="currentColor" />
+          <ArrowUpDown size={14} />
           Sort
           {showSortMenu && (
             <div className="dropdown-menu">
@@ -237,7 +237,7 @@ export default function HomePage({ isDarkMode, toggleDarkMode }: HomePageProps) 
         )}
 
         <h3 className="section-title">
-          <CreditCard size={20} fill="currentColor" /> Subscriptions
+          <CreditCard size={18} /> Subscriptions
           <span className="section-counter">{filteredSubscriptions.length}</span>
         </h3>
         <div className="cards-container">
@@ -253,7 +253,7 @@ export default function HomePage({ isDarkMode, toggleDarkMode }: HomePageProps) 
         {!searchTerm && (
           <>
             <h3 className="section-title">
-              <Folder size={20} fill="currentColor" /> Folders
+              <Folder size={18} /> Folders
               <span className="section-counter">{filteredFolders.length}</span>
             </h3>
             <div className="cards-container">
@@ -270,7 +270,7 @@ export default function HomePage({ isDarkMode, toggleDarkMode }: HomePageProps) 
 
         {filteredSubscriptions.length === 0 && filteredFolders.length === 0 && (
           <div className="empty-state">
-            <Home size={48} fill="currentColor" />
+            <Home size={32} />
             <p>Nothing yet. Add your first subscription or folder!</p>
           </div>
         )}

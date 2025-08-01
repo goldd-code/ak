@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import SubscriptionCard from '../components/SubscriptionCard';
 import SubscriptionForm from '../components/SubscriptionForm';
 import { useSubscriptions } from '../context/SubscriptionContext';
-import { Search, Filter, ArrowUpDown, Plus, Edit2, Trash2 } from 'lucide-react';
+import { Search, Filter, ArrowUpDown, Plus, Edit, Trash } from 'lucide-react';
 import { getCountdownInfo } from '../utils/dateUtils';
 
 interface FolderPageProps {
@@ -152,10 +152,10 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
           </div>
           <div className="folder-actions">
             <button className="action-btn" title="Edit folder" onClick={handleEdit}>
-              <Edit2 size={16} />
+              <Edit size={14} />
             </button>
             <button className="action-btn" title="Delete folder" onClick={deleteFolder}>
-              <Trash2 size={16} />
+              <Trash size={14} />
             </button>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
 
       <div className="folder-search-row">
         <div className="search-input-wrapper" style={{ flex: 1 }}>
-          <Search size={16} className="search-icon" fill="currentColor" />
+          <Search size={14} className="search-icon" />
           <input
             type="text"
             className="search-bar"
@@ -182,7 +182,7 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
             }}
             title="Filter"
           >
-            <Filter size={16} fill="currentColor" />
+            <Filter size={14} />
             {showFilterMenu && (
               <div className="dropdown-menu">
                 <div style={{ padding: '10px 15px', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
@@ -212,7 +212,7 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
             }}
             title="Sort"
           >
-            <ArrowUpDown size={16} fill="currentColor" />
+            <ArrowUpDown size={14} />
             {showSortMenu && (
               <div className="dropdown-menu">
                 <div style={{ padding: '10px 15px', fontWeight: '600', borderBottom: '1px solid var(--border-color)' }}>
@@ -266,7 +266,7 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
             onClick={() => setShowSubscriptionForm(true)}
             title="Add Subscription"
           >
-            <Plus size={16} fill="currentColor" />
+            <Plus size={14} />
           </button>
         </div>
       </div>
@@ -278,7 +278,7 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
           <div className="form-container">
             <div className="form-header">
               <h3 className="form-title">
-                <Edit2 size={18} fill="currentColor" />
+                <Edit size={16} />
                 Edit Folder
               </h3>
               <button className="close-btn" onClick={() => setIsEditing(false)}>
@@ -348,7 +348,7 @@ export default function FolderPage({ isDarkMode, toggleDarkMode }: FolderPagePro
 
         {filteredSubscriptions.length === 0 && (
           <div className="empty-state">
-            <Search size={48} fill="currentColor" />
+            <Search size={32} />
             <p>No subscriptions in this folder</p>
           </div>
         )}

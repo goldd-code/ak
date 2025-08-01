@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSubscriptions } from '../context/SubscriptionContext';
 import { getCountdownInfo, formatDate, getFrequencyShortcut } from '../utils/dateUtils';
 import { Subscription, Folder } from '../types';
-import { Edit2, Trash2, Archive, ExternalLink, FolderOpen, Calendar, DollarSign, Clock } from 'lucide-react';
+import { Edit, Trash, Archive, ExternalLink, Folder, Calendar, DollarSign, Clock, Link } from 'lucide-react';
 
 interface SubscriptionCardProps {
   subscription: Subscription;
@@ -79,7 +79,7 @@ export default function SubscriptionCard({ subscription, folders }: Subscription
             onClick={handleEdit}
             title="Edit"
           >
-            <Edit2 size={14} fill="currentColor" />
+            <Edit size={12} />
           </button>
           <button 
             className="card-actions-btn"
@@ -87,7 +87,7 @@ export default function SubscriptionCard({ subscription, folders }: Subscription
             title="Move to Folder"
             style={{ position: 'relative' }}
           >
-            <FolderOpen size={14} fill="currentColor" />
+            <Folder size={12} />
             {showFolderMenu && (
               <div className="folder-dropdown">
                 <button onClick={() => moveToFolder(null)}>
@@ -106,25 +106,34 @@ export default function SubscriptionCard({ subscription, folders }: Subscription
             onClick={handleDelete}
             title="Delete"
           >
-            <Trash2 size={14} fill="currentColor" />
+            <Trash size={12} />
           </button>
           <button 
             className="card-actions-btn archive-btn"
             onClick={handleToggleArchive}
             title={subscription.archived ? "Unarchive" : "Archive"}
           >
-            <Archive size={14} fill="currentColor" />
+            <Archive size={12} />
           </button>
           {subscription.link && (
-            <a 
-              href={subscription.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-actions-btn"
-              title="Open service"
-            >
-              <ExternalLink size={14} fill="currentColor" />
-            </a>
+            <>
+              <button 
+                className="card-actions-btn"
+                onClick={() => window.open(subscription.link, '_blank')}
+                title="Open service"
+              >
+                <Link size={12} />
+              </button>
+              <a 
+                href={subscription.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-actions-btn"
+                title="Visit website"
+              >
+                <ExternalLink size={12} />
+              </a>
+            </>
           )}
         </div>
       </div>
