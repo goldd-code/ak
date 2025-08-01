@@ -35,7 +35,7 @@ export default function FolderForm({ onClose }: FolderFormProps) {
     <div className="form-container">
       <div className="form-header">
         <h3 className="form-title">
-          <Folder size={18} fill="currentColor" /> Create New Folder
+         <Folder size={16} /> Create New Folder
         </h3>
         <button className="close-btn" onClick={onClose}>
           <X size={16} />

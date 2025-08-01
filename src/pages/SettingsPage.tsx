@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { useSubscriptions } from '../context/SubscriptionContext';
-import { Moon, Sun, Upload, Download, Trash2, Settings } from 'lucide-react';
+import { Moon, Sun, Upload, Download, Trash, Settings } from 'lucide-react';
 
 interface SettingsPageProps {
   isDarkMode: boolean;
@@ -85,7 +85,7 @@ export default function SettingsPage({ isDarkMode, toggleDarkMode }: SettingsPag
     <Layout isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}>
       <div className="settings-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <Settings size={24} fill="currentColor" />
+          <Settings size={20} />
           <h2 className="settings-title">Settings</h2>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function SettingsPage({ isDarkMode, toggleDarkMode }: SettingsPag
               className="setting-toggle"
               onClick={toggleDarkMode}
             >
-              {isDarkMode ? <Sun size={20} fill="currentColor" /> : <Moon size={20} fill="currentColor" />}
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function SettingsPage({ isDarkMode, toggleDarkMode }: SettingsPag
               className="btn btn-primary"
               onClick={exportData}
             >
-              <Download size={16} fill="currentColor" />
+              <Download size={14} />
               Export
             </button>
           </div>
@@ -136,7 +136,7 @@ export default function SettingsPage({ isDarkMode, toggleDarkMode }: SettingsPag
               </div>
             </div>
             <label className="btn btn-secondary">
-              <Upload size={16} fill="currentColor" />
+              <Upload size={14} />
               Import
               <input
                 type="file"
@@ -158,7 +158,7 @@ export default function SettingsPage({ isDarkMode, toggleDarkMode }: SettingsPag
               className="btn btn-danger"
               onClick={deleteAllData}
             >
-              <Trash2 size={16} fill="currentColor" />
+              <Trash size={14} />
               Delete All
             </button>
           </div>

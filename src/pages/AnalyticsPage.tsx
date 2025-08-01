@@ -7,7 +7,7 @@ import RenewalCalendar from '../components/charts/RenewalCalendar';
 import PieChart from '../components/charts/PieChart';
 import { useSubscriptions } from '../context/SubscriptionContext';
 import { calculateAnalytics } from '../utils/analyticsUtils';
-import { Download, FileText, BarChart3, Calendar, TrendingUp, DollarSign } from 'lucide-react';
+import { Download, FileText, BarChart, Calendar, TrendingUp, DollarSign } from 'lucide-react';
 
 interface AnalyticsPageProps {
   isDarkMode: boolean;
@@ -93,16 +93,16 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
       <div className="content">
         <div className="analytics-header">
           <h2 className="analytics-title">
-            <BarChart3 size={24} fill="currentColor" />
+            <BarChart size={20} />
             Analytics Dashboard
           </h2>
           <div className="export-buttons">
             <button className="btn btn-secondary" onClick={exportToPDF}>
-              <FileText size={16} fill="currentColor" />
+              <FileText size={14} />
               PDF
             </button>
             <button className="btn btn-secondary" onClick={exportToCSV}>
-              <Download size={16} fill="currentColor" />
+              <Download size={14} />
               CSV
             </button>
           </div>
@@ -112,7 +112,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
         <div className="stats-overview">
           <div className="stat-card-large">
             <div className="stat-icon">
-              <DollarSign size={24} fill="currentColor" />
+              <DollarSign size={18} />
             </div>
             <div className="stat-content">
               <div className={`stat-value ${animateNumbers ? 'animate' : ''}`}>{analytics.activeSubscriptions}</div>
@@ -126,7 +126,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
 
           <div className="stat-card-large">
             <div className="stat-icon">
-              <Calendar size={24} fill="currentColor" />
+              <Calendar size={18} />
             </div>
             <div className="stat-content">
               <div className={`stat-value ${animateNumbers ? 'animate' : ''}`}>${analytics.nextPayment.toFixed(2)}</div>
@@ -140,7 +140,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
 
           <div className="stat-card-large">
             <div className="stat-icon">
-              <TrendingUp size={24} fill="currentColor" />
+              <TrendingUp size={18} />
             </div>
             <div className="stat-content">
               <div className={`stat-value ${animateNumbers ? 'animate' : ''}`}>${analytics.monthlySpending.toFixed(2)}</div>
@@ -154,7 +154,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
 
           <div className="stat-card-large">
             <div className="stat-icon">
-              <BarChart3 size={24} fill="currentColor" />
+              <BarChart size={18} />
             </div>
             <div className="stat-content">
               <div className={`stat-value ${animateNumbers ? 'animate' : ''}`}>${analytics.totalSpent.toFixed(2)}</div>
@@ -172,7 +172,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
           <div className="chart-container">
             <div className="chart-header">
               <h3>
-                <TrendingUp size={20} fill="currentColor" />
+                <TrendingUp size={16} />
                 Spending Trends
                 <InfoTooltip content="Historical spending patterns over the last 6 months to identify trends" />
               </h3>
@@ -185,7 +185,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
           <div className="chart-container">
             <div className="chart-header">
               <h3>
-                <BarChart3 size={20} fill="currentColor" />
+                <BarChart size={16} />
                 Spending Horizon Forecast
                 <InfoTooltip content="Projected spending over the next 3, 6, or 12 months based on current subscriptions" />
               </h3>
@@ -212,7 +212,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
           <div className="chart-container">
             <div className="chart-header">
               <h3>
-                <Calendar size={20} fill="currentColor" />
+                <Calendar size={16} />
                 Renewal Calendar
                 <InfoTooltip content="Calendar heatmap showing renewal density - darker colors indicate more renewals on that date" />
               </h3>
@@ -231,7 +231,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
           <div className="chart-container">
             <div className="chart-header">
               <h3>
-                <BarChart3 size={20} fill="currentColor" />
+                <BarChart size={16} />
                 Spending by Folder
                 <InfoTooltip content="Monthly spending breakdown organized by folder categories" />
               </h3>
@@ -244,7 +244,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
           <div className="chart-container">
             <div className="chart-header">
               <h3>
-                <BarChart3 size={20} fill="currentColor" />
+                <BarChart size={16} />
                 Spending by Tags
                 <InfoTooltip content="Monthly spending breakdown organized by subscription tags" />
               </h3>
@@ -259,7 +259,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
         <div className="chart-container">
           <div className="chart-header">
             <h3>
-              <DollarSign size={20} fill="currentColor" />
+              <DollarSign size={16} />
               Lifetime Value Projections
               <InfoTooltip content="Projected total cost per subscription over a 10-year period, helping identify most expensive long-term commitments" />
             </h3>
@@ -289,7 +289,7 @@ export default function AnalyticsPage({ isDarkMode, toggleDarkMode }: AnalyticsP
         <div className="chart-container">
           <div className="chart-header">
             <h3>
-              <TrendingUp size={20} fill="currentColor" />
+              <TrendingUp size={16} />
               Savings Simulation Engine
               <InfoTooltip content="What-if scenarios showing potential annual savings if you cancel specific subscriptions" />
             </h3>

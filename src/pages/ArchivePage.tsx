@@ -28,14 +28,14 @@ export default function ArchivePage({ isDarkMode, toggleDarkMode }: ArchivePageP
       <div className="content">
         <div className="archive-header">
           <h2 className="section-title">
-            <Archive size={24} fill="currentColor" />
+            <Archive size={20} />
             Archived Subscriptions
           </h2>
           
           {archivedSubscriptions.length > 0 && (
             <div className="savings-card">
               <div className="savings-icon">
-                <DollarSign size={20} fill="currentColor" />
+                <DollarSign size={18} />
               </div>
               <div className="savings-content">
                 <div className="savings-amount">${moneySaved.toFixed(2)}</div>
@@ -60,7 +60,7 @@ export default function ArchivePage({ isDarkMode, toggleDarkMode }: ArchivePageP
 
         {archivedSubscriptions.length === 0 && (
           <div className="empty-state">
-            <Archive size={48} fill="currentColor" />
+            <Archive size={32} />
             <p>No archived subscriptions</p>
           </div>
         )}

@@ -49,7 +49,7 @@ export default function SubscriptionForm({ onClose, folders, defaultFolderId }: 
     <div className="form-container">
       <div className="form-header">
         <h3 className="form-title">
-          <CreditCard size={18} fill="currentColor" /> Add New Subscription
+          <CreditCard size={16} /> Add New Subscription
         </h3>
         <button className="close-btn" onClick={onClose}>
           <X size={16} />
