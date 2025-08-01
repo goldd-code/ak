@@ -109,10 +109,12 @@ export default function RenewalCalendar({ renewalData, subscriptions }: RenewalC
         });
       }
     }
+  };
+
   const handleMouseLeave = () => {
     setTooltip(prev => ({ ...prev, visible: false }));
   };
-  };
+
   return (
     <div className="renewal-calendar" ref={containerRef}>
       <div className="calendar-header">
